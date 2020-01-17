@@ -123,15 +123,15 @@ reinforcement learning, multi-armed bandits, subset selection, distributed MIMO 
 \section{Introduction}
 \label{sec:intro}
 
-A Distributed multiple-input and multiple-output (MIMO) radar is a system in which multiple transmitters and receivers are deployed in different locations \cite{distributed}.
+A Distributed multiple-input and multiple-output (MIMO) radar is a system in which multiple transmitters and receivers are deployed in different locations \cite{Haimovich2008}.
 The widely distributed antennas increase spatial diversity which can be utilized for improved target localization, parameter estimation and detecting low-observable targets.
 In a MIMO radar, the used waveforms are designed jointly and the waveforms are typically orthogonal.
 Therefore, each transmitter-receiver (TX-RX) pair forms an independent channel for illuminating and observing the targets.
-Increasing the number of channels provides additional spatial diversity at the cost of larger amount of data to be processed and higher power consumption \cite{antenna_subset_selection, selection_and_placement, aittomaki1}.
+Increasing the number of channels provides additional spatial diversity at the cost of larger amount of data to be processed and higher power consumption \cite{Godrich2011, Sun2014, Aittomaeki2018}.
 In addition, active transmitters may expose their location which might be undesired in certain applications.
 Strategies for TX-RX subset selection are studied to preserve the spatial diversity and reduce the costs at the same time.
 
-The TX-RX subset selection problem, especially for target localization, has been previously addressed in the literature \cite{antenna_subset_selection, selection_and_placement}.
+The TX-RX subset selection problem, especially for target localization, has been previously addressed in the literature \cite{Godrich2011, Sun2014}.
 In these studies, the signal-to-interference-plus-noise ratio (SINR) is assumed to be known or estimated.
 It is possible to estimate the SINR based on assumed particular propagation environments and target models, but a real-world radar environment may deviate from the assumed model and consequently lead to performance degradation.
 
@@ -141,7 +141,7 @@ This is the exploration-exploitation trade-off.
 
 This paper proposes a machine learning approach for the active TX-RX subset selection in the distributed MIMO radar context.
 The problem is formulated as a multi-armed bandit (MAB) problem. 
-The MAB framework provides policies for selecting actions to balance the exploration and exploitation trade-off while maximizing the employed reward function \cite{lattimorebandit}.
+The MAB framework provides policies for selecting actions to balance the exploration and exploitation trade-off while maximizing the employed reward function \cite{Lattimore2019}.
 We use extensions from the combinatorial MAB framework to handle the exponentially growing action space and propose a generalized algorithm to solve the problem using any index-based MAB algorithm.
 
 
