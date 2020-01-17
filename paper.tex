@@ -127,7 +127,7 @@ A Distributed multiple-input and multiple-output (MIMO) radar is a system in whi
 The widely distributed antennas increase spatial diversity which can be utilized for improved target localization, parameter estimation and detecting low-observable targets.
 In a MIMO radar, the used waveforms are designed jointly and the waveforms are typically orthogonal.
 Therefore, each transmitter-receiver (TX-RX) pair forms an independent channel for illuminating and observing the targets.
-Increasing the number of channels provides additional spatial diversity at the cost of larger amount of data to be processed and higher power consumption \cite{Godrich2011, Sun2014, Aittomaeki2018}.
+Increasing the number of channels provides additional spatial diversity at the cost of larger amount of data to be processed and higher power consumption \cite{Godrich2011, Sun2014, Aittomaeki2011}.
 In addition, active transmitters may expose their location which might be undesired in certain applications.
 Strategies for TX-RX subset selection are studied to preserve the spatial diversity and reduce the costs at the same time.
 
@@ -184,7 +184,7 @@ where the noise power and the interference power is subtracted from the received
 Note that the SINR is time dependent because random variable $\esp$ is non-stationary. 
 
 
-Performance in target detection and target localization depend on the SINR level \cite{aittomaki1, aittomaki2, antenna_subset_selection, selection_and_placement}.
+Performance in target detection and target localization depend on the SINR level \cite{aittomaeki2011, Aittomaeki2018, Godrich2011, Sun2014}.
 Therefore, a reward function for reinforcement learning is proposed that depends on the vector $\vsinrexp$ that consists of all the SINR values $\esinrexp$.
 The following reward function is used for the employed MAB learning
 \begin{equation}\label{eq:reward_func}
@@ -216,7 +216,7 @@ Different subsets must be explored sufficiently large number of times to reinfor
 \section{Multi-armed bandits}
 \label{sec:mab}
 
-The MAB problem is a sequential decision-making problem in which an agent needs to decide on an action from several competing actions \cite{rl_intro}.
+The MAB problem is a sequential decision-making problem in which an agent needs to decide on an action from several competing actions \cite{Sutton2018}.
 The word arm originates from a slot machine that has a pull lever, and the pull lever is called an arm.
 Pulling an arm of a slot machine gives a reward based on a certain probability distribution.
 In the MAB problem, the agent needs to sequentially decide from many arms which arm to pull to maximize the cumulative reward.
@@ -240,17 +240,17 @@ The update equation for each arm can be written as
 \begin{equation}\label{eq:update1}
     q_{t+1}(a) = q_{t}(a) + \alpha \left(r_t + q_{t}(a)\right),
 \end{equation}
-where $r_t$ is the received reward from selecting the arm $a$, $\alpha$ is a step size and $q_{t}(a)$ is called action-value \cite{rl_intro}.
+where $r_t$ is the received reward from selecting the arm $a$, $\alpha$ is a step size and $q_{t}(a)$ is called action-value \cite{Sutton2018}.
 For stationary rewards, $\alpha$ can be set to $t^{-1}$, so that (\ref{eq:update1}) calculates the empirical mean. 
-For non-stationary rewards, the parameter $\alpha$ needs to be constant so that old rewards have a lower weight than more recent ones \cite{rl_intro}.
+For non-stationary rewards, the parameter $\alpha$ needs to be constant so that old rewards have a lower weight than more recent ones \cite{Sutton2018}.
 
 In practice, a policy is realized as an algorithm.
 We briefly review five different MAB algorithms which are used in the simulations.
 The selected algorithms are widely used to solve MAB problems.
 These algorithms are
 \begin{enumerate}
-    \item $\epsilon$-greedy \cite{rl_intro},
-    \item Upper Confidence Bound (UCB1) \cite{rl_intro, DSWUCB},
+    \item $\epsilon$-greedy \cite{Sutton2018},
+    \item Upper Confidence Bound (UCB1) \cite{Sutton2018, Garivier2008},
     \item Kullback Leibler Upper Confidence Bound (KL-UCB) \cite{KL_UCB},
     \item Thompson sampling \cite{Thompson, DThompson} and
     \item Recency-Based Exploration (RBE) \cite{RBE,DRBE}.
