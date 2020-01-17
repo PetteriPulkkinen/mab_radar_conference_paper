@@ -185,7 +185,7 @@ Note that the SINR is time dependent because random variable $\esp$ is non-stati
 
 
 Performance in target detection and target localization depend on the SINR level \cite{aittomaki1, aittomaki2, antenna_subset_selection, selection_and_placement}.
-Therefore, a reward function for reinforcement learning is proposed that depends on vector $\vsinrexp$ that consists of all the SINR values $\esinrexp$.
+Therefore, a reward function for reinforcement learning is proposed that depends on the vector $\vsinrexp$ that consists of all the SINR values $\esinrexp$.
 The following reward function is used for the employed MAB learning
 \begin{equation}\label{eq:reward_func}
     r(\vasvrx, \vasvtx | \vsinrexp) = \frac{1}{N_S M_S}\sum_{n=1}^N \sum_{m=1}^M  \easvrx \easvtx \esinrexp,
