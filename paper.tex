@@ -251,12 +251,12 @@ These algorithms are
 \begin{enumerate}
     \item $\epsilon$-greedy \cite{Sutton2018},
     \item Upper Confidence Bound (UCB1) \cite{Sutton2018, Garivier2008},
-    \item Kullback Leibler Upper Confidence Bound (KL-UCB) \cite{KL_UCB},
-    \item Thompson sampling \cite{Thompson, DThompson} and
-    \item Recency-Based Exploration (RBE) \cite{RBE,DRBE}.
+    \item Kullback Leibler Upper Confidence Bound (KL-UCB) \cite{Garivier2011},
+    \item Thompson sampling \cite{Agrawal2011, Raj2017} and
+    \item Recency-Based Exploration (RBE) \cite{Oksanen2015,Oksanen2017}.
 \end{enumerate}
 An analysis for stationary and non-stationary reward distributions can be found in the references.
-Also, other algorithms and more extensive discussion on the multi-armed bandits can be found in \cite{lattimorebandit, rl_intro, mab_survey, intro_to_mab}.
+Also, other algorithms and more extensive discussion on the multi-armed bandits can be found in \cite{Lattimore2019, Sutton2018, Burtini2015, Slivkins2019}.
 
 In the $\epsilon$-greedy algorithm the probability of choosing a random arm is $0 < \epsilon \ll 1$ and this probability remains constant in time.
 When not selecting an arm randomly, the algorithm chooses the arm which has the highest action-value.
@@ -272,7 +272,7 @@ Typically, the index is constructed in a way that the arm with highest index is 
 
 Another way to solve a MAB problem is to divide the exploration and the exploitation into two distinct phases.
 This division can be fully deterministic or random. 
-Deterministic algorithms divide the exploration and the exploitation phases into blocks of specific lengths \cite{lattimorebandit}.
+Deterministic algorithms divide the exploration and the exploitation phases into blocks of specific lengths \cite{Lattimore2019}.
 Random algorithms, such as $\epsilon$-greedy, explore different arms with some probability and otherwise they exploit the arm with currently highest action-value. 
 
 %  -------------------------------------------------------------------------------
@@ -292,15 +292,15 @@ The problem with exponentially increasing number of arms can be avoided by refor
 The arms are chosen to maximize the reward function and satisfy the constraints.
 When this formulation is used, the action-values introduced in section~\ref{sec:mab} are the channel SINR estimates $\vsinrb$.
 The total number of arms is reduced to $NM$ and the agent can choose $N_S M_S$ arms at each iteration.
-The formulation is known as the combinatorial multi-armed bandits, in which the subset of arms is called a super arm \cite{comb_mab}.
+The formulation is known as the combinatorial multi-armed bandits, in which the subset of arms is called a super arm \cite{Chen2014}.
 The reformulation is possible because the reward function ($\ref{eq:obj_func}$) is an increasing function of the radar channel SINR values and each arm is independent since waveforms from different transmitters do not interfere with each other if orthogonal waveforms are used.
 
 Usually in the combinatorial MAB problem, the agent does not know the mapping from the arm rewards to the super arm rewards.
 However, here the reward function $\eqref{eq:reward_func}$ is known which enables us to use MAB algorithms from the classical MAB problem.
-Similar approach is used for MIMO antenna subset selection in mobile communications, where each arm represents power-normalized throughput for each antenna and UCB1-algorithm paired with an exhaustive search were used to solve the subset selection problem \cite{MAB_subset_selection}.
-The reward distributions were assumed stationary in \cite{MAB_subset_selection}.  
+Similar approach is used for MIMO antenna subset selection in mobile communications, where each arm represents power-normalized throughput for each antenna and UCB1-algorithm paired with an exhaustive search were used to solve the subset selection problem \cite{Mukherjee2012}.
+The reward distributions were assumed stationary in \cite{Mukherjee2012}.  
 
-In this paper we generalize the approach in \cite{MAB_subset_selection} to any index-based algorithm and non-stationary reward distributions. 
+In this paper we generalize the approach in \cite{Mukherjee2012} to any index-based algorithm and non-stationary reward distributions. 
 The proposed algorithm for solving the combinatorial MAB problem with known mapping from the arm rewards to the super arm rewards is shown in Algorithm~\ref{alg:gcmab}.
 The algorithm allows for using any optimization method to find the super arm, and any index-based MAB algorithm to find the indexes.
 The indexes calculated by a MAB algorithm will ensure that the exploration and exploitation trade-off is balanced well.
@@ -477,7 +477,7 @@ The other algorithms do not have any tunable parameters.
 The time horizon is set to 1000 which is sufficiently long for finding the optimal TX-RX configuration.
 
 The stationary target implies that the expected rewards of the arms do not change in time.
-Therefore, it is possible to achieve a logarithmic regret \cite{lattimorebandit}.
+Therefore, it is possible to achieve a logarithmic regret \cite{Lattimore2019}.
 From Fig.\ref{fig:stationary_regret} it can be observed that all algorithms other than $\epsilon$-greedy can achieve the sublinear regret.
 Algorithms like Thompson sampling and KL-UCB which require knowledge about the reward distribution have excellent performance in these simulations.
 The $\epsilon$-greedy algorithm has the highest regret and it is visible from Fig.\ref{fig:stationary_ci} that such random policies have a high variance.
