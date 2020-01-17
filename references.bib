@@ -1,292 +1,331 @@
-@INPROCEEDINGS{aittomaki1, 
-author={T. {Aittomäki} and H. {Godrich} and H. V. {Poor} and V. {Koivunen}}, 
-booktitle={2011 Conference Record of the Forty Fifth Asilomar Conference on Signals, Systems and Computers (ASILOMAR)}, 
-title={Resource allocation for target detection in distributed {MIMO} radars}, 
-year={2011}, 
-volume={}, 
-number={}, 
-pages={873-877}, 
-keywords={MIMO radar;object detection;radar receivers;radar tracking;radar transmitters;resource allocation;target tracking;white noise;resource allocation;target detection probability;distributed MIMO radars;distributed multiple-input multiple-output radars;radar transmitters;radar receivers;target estimation;target tracking;power transmission;optimal Neyman-Pearson detector;noise scattering;surveillance area;Transmitters;Resource management;Receivers;Noise;Object detection;Radar;Scattering;MIMO radar;Target detection;Likelihood ratio test;Power allocation}, 
-doi={10.1109/ACSSC.2011.6190133}, 
-ISSN={1058-6393}, 
-month={Nov},}
+% Encoding: UTF-8
 
-@INPROCEEDINGS{aittomaki2, 
-author={T. {Aittomäki} and S. P. {Chepuri} and V. {Koivunen}}, 
-booktitle={2018 IEEE 10th Sensor Array and Multichannel Signal Processing Workshop (SAM)}, 
-title={Dynamic Transmit Power Allocation for Distributed {MIMO} Radar Target Detection}, 
-year={2018}, 
-volume={}, 
-number={}, 
-pages={282-286}, 
-keywords={approximation theory;computational complexity;MIMO radar;object detection;radar detection;statistical distributions;dynamic transmit power allocation;multiple transmitters;receivers;optimal allocation;computationally complex task;exact distribution;dynamic scenario;Kullback-Leibler divergence;target detection probability maximisation;transmit power resources;distributed MIMO radar target detection;multiple input multiple output radars;Signal to noise ratio;Covariance matrices;Resource management;Optimization;Object detection;Transmitters;Receivers;MIMO radar;Target detection;Power allocation;Optimization}, 
-doi={10.1109/SAM.2018.8448906}, 
-ISSN={2151-870X}, 
-month={July},}
-
-@ARTICLE{colocated, 
-author={J. {Li} and P. {Stoica}}, 
-journal={IEEE Signal Processing Magazine}, 
-title={{MIMO} Radar with Colocated Antennas}, 
-year={2007}, 
-volume={24}, 
-number={5}, 
-pages={106-114}, 
-keywords={antenna phased arrays;MIMO communication;phased array radar;radar antennas;government agencies;parameter estimation;adaptive techniques;direct applicability;identifiability;phased-array counterpart;waveform diversity;colocated antennas;MIMO radar;Radar antennas;MIMO;Adaptive arrays;Transmitting antennas;Receiving antennas;Parameter estimation;Radar imaging;Antenna arrays;Radar applications;Doppler radar}, 
-doi={10.1109/MSP.2007.904812}, 
-ISSN={1053-5888}, 
-month={Sep.},}
-
-@ARTICLE{distributed, 
-author={A. M. {Haimovich} and R. S. {Blum} and L. J. {Cimini}}, 
-journal={IEEE Signal Processing Magazine}, 
-title={{MIMO} Radar with Widely Separated Antennas}, 
-year={2008}, 
-volume={25}, 
-number={1}, 
-pages={116-129}, 
-keywords={diversity reception;MIMO communication;radar antennas;radar cross-sections;radar receivers;radar transmitters;MIMO radar;radar antennas;multiple-input multiple-output radar;spatially distributed transmitters;spatially distributed receivers;multistatic radar;MIMO communications;spatial diversity;radar cross section;RCS;radar target detection;Radar antennas;MIMO;Radar cross section;Doppler radar;Transmitters;Receiving antennas;Diversity methods;Object detection;Parameter estimation;Spatial resolution}, 
-doi={10.1109/MSP.2008.4408448}, 
-ISSN={1053-5888}, 
-month={},}
-
-@ARTICLE{applications, 
-author={N. C. {Luong} and D. T. {Hoang} and S. {Gong} and D. {Niyato} and P. {Wang} and Y. {Liang} and D. I. {Kim}}, 
-journal={IEEE Communications Surveys Tutorials}, 
-title={Applications of Deep Reinforcement Learning in Communications and Networking: A Survey}, 
-year={2019}, 
-volume={}, 
-number={}, 
-pages={1-1}, 
-keywords={Reinforcement learning;Deep learning;Security;Markov processes;Unmanned aerial vehicles;Ad hoc networks;Tutorials;Deep reinforcement learning;deep Q-learning;networking;communications;spectrum access;rate control;security;caching;data offloading;data collection.}, 
-doi={10.1109/COMST.2019.2916583}, 
-ISSN={1553-877X}, 
-month={},}
-
-@INPROCEEDINGS{jamming, 
-author={L. {Kang} and J. {Bo} and L. {Hongwei} and L. {Siyuan}}, 
-booktitle={IEEE International Conference on Signal Processing, Communications and Computing (ICSPCC)}, 
-title={Reinforcement Learning based Anti-jamming Frequency Hopping Strategies Design for Cognitive Radar}, 
-year={2018}, 
-volume={}, 
-number={}, 
-pages={1-5}, 
-keywords={cognitive radar;frequency hop communication;jamming;learning (artificial intelligence);radar computing;radar interference;cognitive radar;Q-learning;DQN;reinforcement learning algorithm;frequency agile radar;smart jammer model;radar antijamming designs;antijamming frequency hopping strategy design method;FA radar;deep Q-network;signal-to-interference-plus-noise ratio;SINR;Jamming;Radar cross-sections;Interference;Signal to noise ratio;Neural networks;Cognitive radar;cognitive radar;frequency hopping;Q-learning;deep Q-network;jammer}, 
-doi={10.1109/ICSPCC.2018.8567751}, 
-ISSN={}, 
-month={Sep.},}
-
-@ARTICLE{networking_pa1,
-author = {Meng, Fan and Chen, Peng and Wu, Lenan and Cheng, Julian},
-year = {2019},
-month = {01},
-pages = {},
-title = {Power Allocation in Multi-User Cellular Networks: Deep Reinforcement Learning Approaches}
+@InProceedings{Aittomaeki2018,
+  author    = {T. {Aittomäki} and S. P. {Chepuri} and V. {Koivunen}},
+  title     = {Dynamic Transmit Power Allocation for Distributed {MIMO} Radar Target Detection},
+  booktitle = {2018 IEEE 10th Sensor Array and Multichannel Signal Processing Workshop (SAM)},
+  year      = {2018},
+  pages     = {282-286},
+  month     = {July},
+  doi       = {10.1109/SAM.2018.8448906},
+  groups    = {Power optimization},
+  issn      = {2151-870X},
+  keywords  = {approximation theory;computational complexity;MIMO radar;object detection;radar detection;statistical distributions;dynamic transmit power allocation;multiple transmitters;receivers;optimal allocation;computationally complex task;exact distribution;dynamic scenario;Kullback-Leibler divergence;target detection probability maximisation;transmit power resources;distributed MIMO radar target detection;multiple input multiple output radars;Signal to noise ratio;Covariance matrices;Resource management;Optimization;Object detection;Transmitters;Receivers;MIMO radar;Target detection;Power allocation;Optimization},
 }
 
-@inproceedings{networking_pa2,
-  title={Multi-Agent Deep Reinforcement Learning for Dynamic Power Allocation in Wireless Networks.},
-  author={Yasar Sinan Nasir and Dongning Guo},
-  year={2018}
+@Article{Haimovich2008,
+  author   = {A. M. {Haimovich} and R. S. {Blum} and L. J. {Cimini}},
+  title    = {{MIMO} Radar with Widely Separated Antennas},
+  journal  = {IEEE Signal Processing Magazine},
+  year     = {2008},
+  volume   = {25},
+  number   = {1},
+  pages    = {116-129},
+  issn     = {1053-5888},
+  doi      = {10.1109/MSP.2008.4408448},
+  groups   = {Radar background},
+  keywords = {diversity reception;MIMO communication;radar antennas;radar cross-sections;radar receivers;radar transmitters;MIMO radar;radar antennas;multiple-input multiple-output radar;spatially distributed transmitters;spatially distributed receivers;multistatic radar;MIMO communications;spatial diversity;radar cross section;RCS;radar target detection;Radar antennas;MIMO;Radar cross section;Doppler radar;Transmitters;Receiving antennas;Diversity methods;Object detection;Parameter estimation;Spatial resolution},
 }
 
-@article{DDPG,
-  title={Continuous control with deep reinforcement learning},
-  author={Timothy P. Lillicrap and Jonathan J. Hunt and Alexander Pritzel and Nicolas Heess and Tom Erez and Yuval Tassa and David Silver and Daan Wierstra},
-  journal={CoRR},
-  year={2015},
-  volume={abs/1509.02971}
-}
-
-@book{rl_hands_on,
-    author    = "Sudharsan Ravichandiran",
-    title     = "Hands-On Reinforcement Learning With Python",
-    year      = "2018",
-    publisher = "Packt Publishing",
-    address   = "Reading, Massachusetts"
-}
-
-@book{rl_intro,
-  author = {Sutton, Richard S. and Barto, Andrew G.},
-  edition = {Second},
+@Book{Sutton2018,
+  title     = {Reinforcement Learning: An Introduction},
   publisher = {The MIT Press},
-  title = {Reinforcement Learning: An Introduction},
-  year = {2018 }
+  year      = {2018},
+  author    = {Sutton,Richard S. and Barto,Andrew G.},
+  edition   = {Second},
+  groups    = {RL background, RL},
 }
 
-@ARTICLE{RBE, 
-author={J. {Oksanen} and V. {Koivunen}}, 
-journal={IEEE Transactions on Signal Processing}, 
-title={An Order Optimal Policy for Exploiting Idle Spectrum in Cognitive Radio Networks}, 
-year={2015}, 
-volume={63}, 
-number={5}, 
-pages={1214-1227}, 
-keywords={cognitive radio;Markov processes;radio spectrum management;Markov chain;Gilbert-Elliot model;data transmission;radio spectrum;stationary unknown reward distributions;stochastic restless multiarmed bandit problem;multiband dynamic spectrum access;spectrum sensing policy;cognitive radio networks;Sensors;Cognitive radio;Markov processes;Indexes;Dynamic spectrum access;Data communication;Cognitive radio;opportunistic spectrum access (OSA);restless multi-armed bandit (RMAB);online learning;multi-band spectrum sensing}, 
-doi={10.1109/TSP.2015.2391072}, 
-ISSN={1053-587X}, 
-month={March},}
-
-@inproceedings{DCMAB,
-author = {Robin, Allesiardo and Feraud, Raphaël and Bouneffouf, Djallel},
-year = {2014},
-month = {11},
-pages = {},
-title = {A Neural Networks Committee for the Contextual Bandit Problem},
-doi = {10.1007/978-3-319-12637-1_47}
+@Article{Oksanen2015,
+  author   = {J. {Oksanen} and V. {Koivunen}},
+  title    = {An Order Optimal Policy for Exploiting Idle Spectrum in Cognitive Radio Networks},
+  journal  = {IEEE Transactions on Signal Processing},
+  year     = {2015},
+  volume   = {63},
+  number   = {5},
+  pages    = {1214-1227},
+  month    = {March},
+  issn     = {1053-587X},
+  doi      = {10.1109/TSP.2015.2391072},
+  groups   = {MAB algorithms},
+  keywords = {cognitive radio;Markov processes;radio spectrum management;Markov chain;Gilbert-Elliot model;data transmission;radio spectrum;stationary unknown reward distributions;stochastic restless multiarmed bandit problem;multiband dynamic spectrum access;spectrum sensing policy;cognitive radio networks;Sensors;Cognitive radio;Markov processes;Indexes;Dynamic spectrum access;Data communication;Cognitive radio;opportunistic spectrum access (OSA);restless multi-armed bandit (RMAB);online learning;multi-band spectrum sensing},
 }
 
-@ARTICLE{DSWUCB,
-       author = {{Garivier}, Aur{\'e}lien and {Moulines}, Eric},
-        title = "{On Upper-Confidence Bound Policies for Non-Stationary Bandit Problems}",
-      journal = {arXiv e-prints},
-     keywords = {Mathematics - Statistics},
-         year = "2008",
-        month = "May",
-          eid = {arXiv:0805.3415},
-        pages = {arXiv:0805.3415},
-archivePrefix = {arXiv},
-       eprint = {0805.3415},
- primaryClass = {math.ST},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2008arXiv0805.3415G},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+@Article{Aurelien2008,
+  author  = {Aur\'elien,Garivier and Eric,Moulines},
+  title   = {On Upper-Confidence Bound Policies for Non-Stationary Bandit Problems},
+  journal = {arXiv e-prints},
+  year    = {2008},
+  pages   = {ar:0805.3415},
+  month   = {May},
+  note    = {0805.3415; Provided by the SAO/NASA Astrophysics Data System},
+  groups  = {MAB, MAB algorithms},
+  url     = {https://ui.adsabs.harvard.edu/abs/2008arXiv0805.3415G},
 }
 
-@misc{SMPyBandits,
-    title =   {{SMPyBandits: an Open-Source Research Framework for Single and Multi-Players Multi-Arms Bandits (MAB) Algorithms in Python}},
-    author =  {Lilian Besson},
-    year =    {2018},
-    url =     {https://github.com/SMPyBandits/SMPyBandits/},
-    howpublished = {Online at: \url{GitHub.com/SMPyBandits/SMPyBandits}},
-    note =    {Code at https://github.com/SMPyBandits/SMPyBandits/, documentation at https://smpybandits.github.io/}
+@Misc{Besson2018,
+  author       = {Lilian Besson},
+  title        = {{SMPyBandits: an Open-Source Research Framework for Single and Multi-Players Multi-Arms Bandits (MAB) Algorithms in Python}},
+  howpublished = {Online at: \url{GitHub.com/SMPyBandits/SMPyBandits}},
+  year         = {2018},
+  note         = {Code at https://github.com/SMPyBandits/SMPyBandits/, documentation at https://smpybandits.github.io/},
+  groups       = {Libraries},
+  url          = {https://github.com/SMPyBandits/SMPyBandits/},
 }
 
-@ARTICLE{MAB_recof_antennas,
-author={N. {Gulati} and K. R. {Dandekar}},
-journal={IEEE Transactions on Antennas and Propagation},
-title={Learning State Selection for Reconfigurable Antennas: A Multi-Armed Bandit Approach},
-year={2014},
-volume={62},
-number={3},
-pages={1027-1038},
-keywords={antenna radiation patterns;MIMO communication;OFDM modulation;radio links;wireless channels;learning state selection;reconfigurable antennas;multiarmed bandit approach;radiation patterns;wireless link;optimal antenna state;channel state information;reconfigurable antenna state selection;multiarmed bandit problem;arbitrary link quality metrics;online learning;multiarmed bandit framework;sequential decision policy;wireless channel statistics;adaptive state selection;MIMO OFDM system;long term link performance;channel training frequency;Receiving antennas;Training;Transmitting antennas;MIMO;OFDM;Beamsteering;cognitive radio;MIMO;multi-armed bandit;OFDM;online learning;reconfigurable antennas},
-doi={10.1109/TAP.2013.2276414},
-ISSN={},
-month={March},}
-
-@INPROCEEDINGS{MAB_subset_selection,
-author={A. {Mukherjee} and A. {Hottinen}},
-booktitle={Proceedings of the 20th European Signal Processing Conference (EUSIPCO)},
-title={Learning algorithms for energy-efficient MIMO antenna subset selection: Multi-armed bandit framework},
-year={2012},
-volume={},
-number={},
-pages={659-663},
-keywords={active antennas;Bayes methods;energy conservation;learning (artificial intelligence);MIMO communication;mobile handsets;multifrequency antennas;power consumption;radio transceivers;radiowave propagation;wireless channels;energy efficiency;MIMO antenna subset selection;multiarmed bandit framework;mobile device;power consumption;wireless propagation medium;random variation;wireless channel;transceiver;active antenna subset;power normalized throughput;sequential learning scheme;naive approach;Antennas;Transceivers;Throughput;Wireless communication;MIMO;Power demand;Radio frequency;Antenna selection;energy efficiency;learning;multi-armed bandit},
-doi={},
-ISSN={},
-month={Aug},}
-
-@book{lattimorebandit,
-  title={Bandit Algorithms},
-  author={Lattimore, Tor and Szepesv{\'a}ri, Csaba},
-  publisher={Cambridge University Press},
-  year={2019},
-  note={{D}raft of 27th June, Revision: 8b22},
+@InProceedings{Mukherjee2012,
+  author    = {A. {Mukherjee} and A. {Hottinen}},
+  title     = {Learning algorithms for energy-efficient MIMO antenna subset selection: Multi-armed bandit framework},
+  booktitle = {2012 Proceedings of the 20th European Signal Processing Conference (EUSIPCO)},
+  year      = {2012},
+  pages     = {659-663},
+  month     = {Aug},
+  abstract  = {The use of multiple antennas in mobile devices provides enhanced data rates at the cost of increased power consumption. The stochastic nature of the wireless propagation medium and random variations in the utilization and operating environment of the device makes it difficult to estimate and predict wireless channels and power consumption levels. Therefore, we investigate a robust antenna subset selection policy where the power-normalized throughput is assumed to be drawn from an unknown distribution with unknown mean. At each time instant, the transceiver decides upon the active antenna subset based on observations of the outcomes of previous choices, with the objective being to identify the optimal antenna subset which maximizes the power-normalized throughput. In this work, we present a sequential learning scheme to achieve this based on the theory of multi-armed bandits. Simulations verify that the proposed novel method that accounts for dependent arms outperforms a naïve approach designed for independent arms in terms of regret.},
+  groups    = {Antenna selection},
+  issn      = {2219-5491},
+  keywords  = {active antennas;Bayes methods;energy conservation;learning (artificial intelligence);MIMO communication;mobile handsets;multifrequency antennas;power consumption;radio transceivers;radiowave propagation;wireless channels;energy efficiency;MIMO antenna subset selection;multiarmed bandit framework;mobile device;power consumption;wireless propagation medium;random variation;wireless channel;transceiver;active antenna subset;power normalized throughput;sequential learning scheme;naive approach;Antennas;Transceivers;Throughput;Wireless communication;MIMO;Power demand;Radio frequency;Antenna selection;energy efficiency;learning;multi-armed bandit},
+  url       = {https://ieeexplore.ieee.org/document/6334260},
 }
 
-@BOOK{principles,
-  TITLE = {Fundamental Principles of Optical Lithography},
-  AUTHOR = {Mack, Chris A},
-  YEAR = {2019},
-  PUBLISHER = {Cambridge University Press},
+@Book{Lattimore2019,
+  title     = {Bandit Algorithms},
+  publisher = {Cambridge University Press},
+  year      = {2019},
+  author    = {Lattimore, Tor and Szepesv{\'a}ri, Csaba},
+  note      = {{D}raft of 27th June, Revision: 8b22},
+  groups    = {MAB surveys},
 }
 
-@INPROCEEDINGS{antenna_subset_selection,
-author={H. {Godrich} and A. {Petropulu} and H. V. {Poor}},
-booktitle={19th European Signal Processing Conference},
-title={Antenna subset selection in distributed multiple-radar architectures: A knapsack problem formulation},
-year={2011},
-volume={},
-number={},
-pages={1693-1697},
-keywords={combinatorial mathematics;computational complexity;decision making;knapsack problems;mean square error methods;optimisation;radar antennas;resource allocation;antenna subset selection;distributed multiple-radar architecture;knapsack problem formulation;resource allocation scheme;target localization;mean-square error minimization;MSE minimization;combinatorial optimization framework;Cramer-Rao bound;CRB;KP formulation;decision making;approximation algorithm;temporal Fisher information matrix;FIM;computational complexity;exhaustive search;distributive processing;Radar cross-sections;Receiving antennas;Manganese;Approximation algorithms;Radar antennas;MIMO radar;Multistatic radar;Cramer-Rao bound;resource allocation;target localization},
-doi={},
-ISSN={},
-month={Aug},}
-
-@article{selection_and_placement,
-author = {Sun, Bin and Chen, Haowen and Yang, Degui and Li, Xiang},
-year = {2014},
-month = {05},
-pages = {1-10},
-title = {Antenna Selection and Placement Analysis of {MIMO} Radar Networks for Target Localization},
-volume = {2014},
-journal = {International Journal of Distributed Sensor Networks},
-doi = {10.1155/2014/769404}
+@InProceedings{Godrich2011,
+  author    = {H. {Godrich} and A. {Petropulu} and H. V. {Poor}},
+  title     = {Antenna subset selection in distributed multiple-radar architectures: A knapsack problem formulation},
+  booktitle = {2011 19th European Signal Processing Conference},
+  year      = {2011},
+  pages     = {1693-1697},
+  month     = {Aug},
+  abstract  = {In this paper, a performance driven resource allocation scheme for target localization in multiple radar systems is proposed and evaluated. An optimal subset of active antennas of predetermined size, K, is selected such that the localization mean-square error (MSE) is minimized. The problem is formulated in a combinatorial optimization framework as a knapsack problem (KP). The Cramer-Rao bound (CRB) is used as a performance metric. Cost parameters, representing operational cost or any other utilization constraints, are associated with each of the antennas. These are incorporated into the KP formulation, integrating decision making factors in the selection process. Antenna subset selection is implemented through an approximation algorithm, by successively selecting antennas so as to maximize the temporal Fisher information matrix (FIM) for a given subset size. The proposed approximation algorithm offers considerable reduction in computational complexity when compared with exhaustive search, supporting distributive processing and low performance loss.},
+  groups    = {Radar optimization, Antenna selection},
+  issn      = {2076-1465},
+  keywords  = {combinatorial mathematics;computational complexity;decision making;knapsack problems;mean square error methods;optimisation;radar antennas;resource allocation;antenna subset selection;distributed multiple-radar architecture;knapsack problem formulation;resource allocation scheme;target localization;mean-square error minimization;MSE minimization;combinatorial optimization framework;Cramer-Rao bound;CRB;KP formulation;decision making;approximation algorithm;temporal Fisher information matrix;FIM;computational complexity;exhaustive search;distributive processing;Radar cross-sections;Receiving antennas;Manganese;Approximation algorithms;Radar antennas;MIMO radar;Multistatic radar;Cramer-Rao bound;resource allocation;target localization},
+  url       = {https://ieeexplore.ieee.org/document/7074273},
 }
 
-@article{KL_UCB,
-author = {Garivier, Aurélien and Cappé, Olivier},
-year = {2011},
-month = {02},
-pages = {},
-title = {The KL-UCB Algorithm for Bounded Stochastic Bandits and Beyond},
-journal = {Computing Research Repository - CORR}
+@Article{Sun2014,
+  author  = {Sun, Bin and Chen, Haowen and Yang, Degui and Li, Xiang},
+  title   = {Antenna Selection and Placement Analysis of {MIMO} Radar Networks for Target Localization},
+  journal = {International Journal of Distributed Sensor Networks},
+  year    = {2014},
+  volume  = {2014},
+  pages   = {1-10},
+  month   = {05},
+  doi     = {10.1155/2014/769404},
+  groups  = {Antenna selection},
 }
 
-@article{Thompson,
-author = {Agrawal, Shipra and Goyal, Navin},
-year = {2011},
-month = {11},
-pages = {},
-title = {Analysis of Thompson Sampling for the multi-armed bandit problem},
-volume = {23},
-journal = {Journal of Machine Learning Research}
+@Article{Garivier2011,
+  author        = {{Garivier}, Aur{\'e}lien and {Capp{\'e}}, Olivier},
+  title         = {{The KL-UCB Algorithm for Bounded Stochastic Bandits and Beyond}},
+  journal       = {arXiv e-prints},
+  year          = {2011},
+  pages         = {arXiv:1102.2490},
+  month         = {Feb},
+  abstract      = {{This paper presents a finite-time analysis of the KL-UCB algorithm, an
+        online, horizon-free index policy for stochastic bandit
+        problems. We prove two distinct results: first, for arbitrary
+        bounded rewards, the KL-UCB algorithm satisfies a uniformly
+        better regret bound than UCB or UCB2; second, in the special
+        case of Bernoulli rewards, it reaches the lower bound of Lai and
+        Robbins. Furthermore, we show that simple adaptations of the KL-
+        UCB algorithm are also optimal for specific classes of (possibly
+        unbounded) rewards, including those generated from exponential
+        families of distributions. A large-scale numerical study
+        comparing KL-UCB with its main competitors (UCB, UCB2, UCB-
+        Tuned, UCB-V, DMED) shows that KL-UCB is remarkably efficient
+        and stable, including for short time horizons. KL-UCB is also
+        the only method that always performs better than the basic UCB
+        policy. Our regret bounds rely on deviations results of
+        independent interest which are stated and proved in the
+        Appendix. As a by-product, we also obtain an improved regret
+        bound for the standard UCB algorithm. <P />}},
+  adsnote       = {Provided by the SAO/NASA Astrophysics Data System},
+  adsurl        = {https://ui.adsabs.harvard.edu/abs/2011arXiv1102.2490G},
+  archiveprefix = {arXiv},
+  eid           = {arXiv:1102.2490},
+  eprint        = {1102.2490},
+  groups        = {MAB, MAB algorithms},
+  keywords      = {Mathematics - Statistics Theory, Computer Science - Machine Learning, Computer Science - Systems and Control, Mathematics - Optimization and Control, 93E35},
+  primaryclass  = {math.ST},
+  url           = {https://arxiv.org/abs/1102.2490v5},
 }
 
-@INPROCEEDINGS{DRBE,
-author={J. {Oksanen} and V. {Koivunen}},
-booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-title={Learning spectrum opportunities in non-stationary radio environments},
-year={2017},
-volume={},
-number={},
-pages={2447-2451},
-keywords={cognitive radio;mobile radio;mobile cognitive radios;index policies;stochastic nonstationary restless multiarmed bandit formulation;cognitive radio;multiband flexible spectrum use;learning-based sensing policies;nonstationary radio environment;learning spectrum;Sensors;Indexes;Cognitive radio;Time-frequency analysis;Fading channels;Interference;Probability;Flexible spectrum use;cognitive radio;opportunistic spectrum access;multi-armed bandit;dynamic propagation environment},
-doi={10.1109/ICASSP.2017.7952596},
-ISSN={},
-month={March},}
-
-@misc{DThompson,
-    title={Taming Non-stationary Bandits: A Bayesian Approach},
-    author={Vishnu Raj and Sheetal Kalyani},
-    year={2017},
-    eprint={1707.09727},
-    archivePrefix={arXiv},
-    primaryClass={stat.ML}
+@Article{Agrawal2011,
+  author        = {Shipra Agrawal and Navin Goyal},
+  title         = {Analysis of Thompson Sampling for the multi-armed bandit problem},
+  journal       = {CoRR},
+  year          = {2011},
+  volume        = {abs/1111.1797},
+  archiveprefix = {arXiv},
+  bibsource     = {dblp computer science bibliography, https://dblp.org},
+  biburl        = {https://dblp.org/rec/bib/journals/corr/abs-1111-1797},
+  eprint        = {1111.1797},
+  groups        = {MAB, MAB algorithms},
+  timestamp     = {Mon, 13 Aug 2018 16:48:14 +0200},
+  url           = {http://arxiv.org/abs/1111.1797},
 }
 
-@article{mab_survey,
-  title={A Survey of Online Experiment Design with the Stochastic Multi-Armed Bandit},
-  author={Giuseppe Burtini and Jason L. Loeppky and Ramon Lawrence},
-  journal={ArXiv},
-  year={2015},
-  volume={abs/1510.00757}
+@InProceedings{Oksanen2017,
+  author    = {J. {Oksanen} and V. {Koivunen}},
+  title     = {Learning spectrum opportunities in non-stationary radio environments},
+  booktitle = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year      = {2017},
+  pages     = {2447-2451},
+  month     = {March},
+  doi       = {10.1109/ICASSP.2017.7952596},
+  groups    = {MAB in CommNet},
+  keywords  = {cognitive radio;mobile radio;mobile cognitive radios;index policies;stochastic nonstationary restless multiarmed bandit formulation;cognitive radio;multiband flexible spectrum use;learning-based sensing policies;nonstationary radio environment;learning spectrum;Sensors;Indexes;Cognitive radio;Time-frequency analysis;Fading channels;Interference;Probability;Flexible spectrum use;cognitive radio;opportunistic spectrum access;multi-armed bandit;dynamic propagation environment},
 }
 
-@article{intro_to_mab,
-  title={Introduction to multi-armed bandits},
-  author={Slivkins, Aleksandrs},
-  journal={arXiv preprint arXiv:1904.07272},
-  year={2019}
+@InProceedings{Raj2017,
+  author    = {Raj,Vishnu and Kalyani,Sheetal},
+  title     = {Taming Non-stationary Bandits: A Bayesian Approach},
+  booktitle = {Conference on Neural Information Processing Systems (NIPS)},
+  year      = {2017},
+  note      = {1707.09727},
+  groups    = {MAB, MAB algorithms},
+  url       = {https://arxiv.org/abs/1707.09727},
 }
 
-@misc{comb_mab,
-    title={Combinatorial Multi-Armed Bandit and Its Extension to Probabilistically Triggered Arms},
-    author={Wei Chen and Yajun Wang and Yang Yuan and Qinshi Wang},
-    year={2014},
-    eprint={1407.8339},
-    archivePrefix={arXiv},
-    primaryClass={cs.LG}
+@Article{Burtini2015,
+  author        = {{Burtini}, Giuseppe and {Loeppky}, Jason and {Lawrence}, Ramon},
+  title         = {{A Survey of Online Experiment Design with the Stochastic Multi-Armed Bandit}},
+  journal       = {arXiv e-prints},
+  year          = {2015},
+  pages         = {arXiv:1510.00757},
+  month         = {Oct},
+  abstract      = {{Adaptive and sequential experiment design is a well-studied area in
+        numerous domains. We survey and synthesize the work of the
+        online statistical learning paradigm referred to as multi-armed
+        bandits integrating the existing research as a resource for a
+        certain class of online experiments. We first explore the
+        traditional stochastic model of a multi-armed bandit, then
+        explore a taxonomic scheme of complications to that model, for
+        each complication relating it to a specific requirement or
+        consideration of the experiment design context. Finally, at the
+        end of the paper, we present a table of known upper-bounds of
+        regret for all studied algorithms providing both perspectives
+        for future theoretical work and a decision-making tool for
+        practitioners looking for theoretical guarantees. <P />}},
+  adsnote       = {Provided by the SAO/NASA Astrophysics Data System},
+  adsurl        = {https://ui.adsabs.harvard.edu/abs/2015arXiv151000757B},
+  archiveprefix = {arXiv},
+  eid           = {arXiv:1510.00757},
+  eprint        = {1510.00757},
+  groups        = {MAB, MAB surveys},
+  keywords      = {Statistics - Machine Learning, Computer Science - Machine Learning},
+  primaryclass  = {stat.ML},
+  url           = {https://arxiv.org/abs/1510.00757},
+}
+
+@Article{Slivkins2019,
+  author        = {Aleksandrs Slivkins},
+  title         = {Introduction to Multi-Armed Bandits},
+  journal       = {CoRR},
+  year          = {2019},
+  volume        = {abs/1904.07272},
+  archiveprefix = {arXiv},
+  bibsource     = {dblp computer science bibliography, https://dblp.org},
+  biburl        = {https://dblp.org/rec/bib/journals/corr/abs-1904-07272},
+  eprint        = {1904.07272},
+  groups        = {MAB, MAB surveys},
+  timestamp     = {Thu, 25 Apr 2019 13:55:01 +0200},
+  url           = {http://arxiv.org/abs/1904.07272},
+}
+
+@Article{Chen2014,
+  author        = {Wei Chen and Yajun Wang and Yang Yuan},
+  title         = {Combinatorial Multi-Armed Bandit and Its Extension to Probabilistically Triggered Arms},
+  journal       = {CoRR},
+  year          = {2014},
+  volume        = {abs/1407.8339},
+  archiveprefix = {arXiv},
+  bibsource     = {dblp computer science bibliography, https://dblp.org},
+  biburl        = {https://dblp.org/rec/bib/journals/corr/ChenWY14a},
+  eprint        = {1407.8339},
+  groups        = {MAB, MAB surveys},
+  timestamp     = {Wed, 18 Dec 2019 12:08:13 +0100},
+  url           = {http://arxiv.org/abs/1407.8339},
+}
+
+@Article{Gulati2014,
+  author   = {N. {Gulati} and K. R. {Dandekar}},
+  title    = {Learning State Selection for Reconfigurable Antennas: A Multi-Armed Bandit Approach},
+  journal  = {IEEE Transactions on Antennas and Propagation},
+  year     = {2014},
+  volume   = {62},
+  number   = {3},
+  pages    = {1027-1038},
+  month    = {March},
+  issn     = {1558-2221},
+  abstract = {Reconfigurable antennas are capable of dynamically re-shaping their radiation patterns in response to the needs of a wireless link or a network. In order to utilize the benefits of reconfigurable antennas, selecting an optimal antenna state for communication is essential and depends on the availability of full channel state information for all the available antenna states. We consider the problem of reconfigurable antenna state selection in a single user MIMO system. We first formulate the state selection as a multi-armed bandit problem that aims to optimize arbitrary link quality metrics. We then show that by using online learning under a multi-armed bandit framework, a sequential decision policy can be employed to learn optimal antenna states without instantaneous full CSI and without a priori knowledge of wireless channel statistics. Our objective is to devise an adaptive state selection technique when the channels corresponding to all the states are not directly observable and compare our results against the case of a known model or genie with full information. We evaluate the performance of the proposed antenna state selection technique by identifying key link quality metrics and using measured channels in a 2 × 2 MIMO OFDM system. We show that the proposed technique maximizes long term link performance with reduced channel training frequency.},
+  doi      = {10.1109/TAP.2013.2276414},
+  groups   = {MAB in CommNet},
+  keywords = {antenna radiation patterns;MIMO communication;OFDM modulation;radio links;wireless channels;learning state selection;reconfigurable antennas;multiarmed bandit approach;radiation patterns;wireless link;optimal antenna state;channel state information;reconfigurable antenna state selection;multiarmed bandit problem;arbitrary link quality metrics;online learning;multiarmed bandit framework;sequential decision policy;wireless channel statistics;adaptive state selection;MIMO OFDM system;long term link performance;channel training frequency;Receiving antennas;Training;Transmitting antennas;MIMO;OFDM;Beamsteering;cognitive radio;MIMO;multi-armed bandit;OFDM;online learning;reconfigurable antennas},
+}
+
+@InProceedings{Gai2010,
+  author    = {Y. {Gai} and B. {Krishnamachari} and R. {Jain}},
+  title     = {Learning Multiuser Channel Allocations in Cognitive Radio Networks: A Combinatorial Multi-Armed Bandit Formulation},
+  booktitle = {2010 IEEE Symposium on New Frontiers in Dynamic Spectrum (DySPAN)},
+  year      = {2010},
+  pages     = {1-9},
+  month     = {April},
+  abstract  = {We consider the following fundamental problem in the context of channelized dynamic spectrum access. There are M secondary users and N ¿ M orthogonal channels. Each secondary user requires a single channel for operation that does not conflict with the channels assigned to the other users. Due to geographic dispersion, each secondary user can potentially see different primary user occupancy behavior on each channel. Time is divided into discrete decision rounds. The throughput obtainable from spectrum opportunities on each user-channel combination over a decision period is modeled as an arbitrarily-distributed random variable with bounded support but unknown mean, i.i.d. over time. The objective is to search for an allocation of channels for all users that maximizes the expected sum throughput. We formulate this problem as a combinatorial multi-armed bandit (MAB), in which each arm corresponds to a matching of the users to channels. Unlike most prior work on multi-armed bandits, this combinatorial formulation results in dependent arms. Moreover, the number of arms grows super-exponentially as the permutation P(N, M). We present a novel matching-learning algorithm with polynomial storage and polynomial computation per decision period for this problem, and prove that it results in a regret (the gap between the expected sum-throughput obtained by a genie-aided perfect allocation and that obtained by this algorithm) that is uniformly upper-bounded for all time n by a function that grows as O(M4Nlogn), i.e. polynomial in the number of unknown parameters and logarithmic in time. We also discuss how our results provide a non-trivial generalization of known theoretical results on multi-armed bandits.},
+  doi       = {10.1109/DYSPAN.2010.5457857},
+  groups    = {MAB in CommNet},
+  issn      = {null},
+  keywords  = {channel allocation;cognitive radio;multiuser channels;polynomials;radio spectrum management;cognitive radio networks;multiuser channel allocations;combinatorial multiarmed bandit formulation;channelized dynamic spectrum access;secondary users;orthogonal channels;geographic dispersion;discrete decision rounds;spectrum opportunity;userchannel combination;distributed random variable;matching-learning algorithm;polynomial storage;polynomial computation;genie-aided perfect allocation;Multiuser channels;Cognitive radio;Arm;Throughput;Polynomials;Stochastic processes;Communications Society;USA Councils;Random variables;Intelligent networks},
+}
+
+@Article{Zhao2008,
+  author   = {Q. {Zhao} and B. {Krishnamachari} and K. {Liu}},
+  title    = {On myopic sensing for multi-channel opportunistic access: structure, optimality, and performance},
+  journal  = {IEEE Transactions on Wireless Communications},
+  year     = {2008},
+  volume   = {7},
+  number   = {12},
+  pages    = {5431-5440},
+  month    = {December},
+  issn     = {1558-2248},
+  abstract = {We consider a multi-channel opportunistic communication system where the states of these channels evolve as independent and statistically identical Markov chains (the Gilbert- Elliot channel model). A user chooses one channel to sense and access in each slot and collects a reward determined by the state of the chosen channel. The problem is to design a sensing policy for channel selection to maximize the average reward, which can be formulated as a multi-arm restless bandit process. In this paper, we study the structure, optimality, and performance of the myopic sensing policy. We show that the myopic sensing policy has a simple robust structure that reduces channel selection to a round-robin procedure and obviates the need for knowing the channel transition probabilities. The optimality of this simple policy is established for the two-channel case and conjectured for the general case based on numerical results. The performance of the myopic sensing policy is analyzed, which, based on the optimality of myopic sensing, characterizes the maximum throughput of a multi-channel opportunistic communication system and its scaling behavior with respect to the number of channels. These results apply to cognitive radio networks, opportunistic transmission in fading environments, downlink scheduling in centralized networks, and resource-constrained jamming and anti-jamming.},
+  doi      = {10.1109/T-WC.2008.071349},
+  groups   = {MAB in CommNet},
+  keywords = {cognitive radio;fading channels;jamming;Markov processes;scheduling;myopic sensing;multichannel opportunistic access;Markov chains;Gilbert-Elliot channel model;channel selection;cognitive radio networks;fading environments;downlink scheduling;resource-constrained jamming;resource-constrained antijamming;Cognitive radio;Jamming;Fading;Downlink;Throughput;Robustness;Performance analysis;Interference;Laboratories;Opportunistic access, cognitive radio, multi-channel MAC, multi-arm restless bandit process, myopic policy.},
+}
+
+@InProceedings{Kuai2019,
+  author    = {Z. {Kuai} and T. {Wang} and S. {Wang}},
+  title     = {Transmit Antenna Selection in Massive MIMO Systems: An Online Learning Framework},
+  booktitle = {2019 IEEE/CIC International Conference on Communications in China (ICCC)},
+  year      = {2019},
+  pages     = {496-501},
+  month     = {Aug},
+  abstract  = {Antenna selection (AS) is a signal processing technique that activates a selected subset of available antennas in multi-antenna systems, based on which a performance-hardware tradeoff can be achieved by reducing the number of costly radio-frequency (RF) chains. The biggest challenge of AS is the combinatorial complexity that arises from the classic K-out-of-N problem, which makes it more challenging for massive MIMO systems equipped with large-scale antenna arrays. In addition, for massive MIMO systems with limited RF chains, the amount of radio resources dedicated to channel state information (CSI) measurement will increase tremendously, which may highly degrade the overall performance of AS. In this paper, we consider the transmit AS problem in time division duplexing (TDD) massive MIMO systems, where K out of N transmit antennas are selected to maximize the total throughput of M single-antenna users in the downlink. We propose an online learning scheme and introduce Thompson sampling techniques to update the set of active antennas with partial CSI. The idea behind is to find an efficient tradeoff between the exploitation of high-performance antennas and the exploration of antennas with uncertain CSI with low complexity. Our proposed scheme is validated by using COST 2100 channel model, and simulation results show that it greatly outperforms the conventional power-based and convex relaxation based schemes, in terms of the total downlink throughput.},
+  doi       = {10.1109/ICCChina.2019.8855807},
+  groups    = {Antenna selection},
+  issn      = {2377-8644},
+  keywords  = {antenna arrays;learning (artificial intelligence);MIMO communication;telecommunication computing;time division multiplexing;transmitting antennas;transmit antenna selection;signal processing technique;multiantenna systems;large-scale antenna arrays;RF chains;online learning scheme;active antennas;high-performance antennas;radio-frequency chains;time division duplexing;single-antenna users;massive MIMO systems;combinatorial complexity;channel state information measurement;Thompson sampling;COST 2100 channel model;Radio frequency;Transmitting antennas;Downlink;Uplink;Base stations;Antenna selection;massive MIMO;online learning;Thompson sampling},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
+
+@Comment{jabref-meta: grouping:
+0 AllEntriesGroup:;
+1 StaticGroup:MAB algorithms\;0\;1\;\;\;\;;
+1 StaticGroup:Radar background\;0\;1\;\;\;\;;
+1 StaticGroup:Antenna selection\;0\;1\;\;\;\;;
+1 StaticGroup:MAB surveys\;0\;1\;\;\;\;;
+1 StaticGroup:RL\;0\;1\;\;\;\;;
+1 StaticGroup:MAB in CommNet\;0\;1\;\;\;\;;
+1 StaticGroup:Power optimization\;0\;1\;\;\;\;;
+1 StaticGroup:Libraries\;0\;1\;\;\;\;;
 }
