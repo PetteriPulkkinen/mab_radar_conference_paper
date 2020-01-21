@@ -222,11 +222,11 @@ Different subsets must be explored sufficiently large number of times to reinfor
 The MAB problem is a sequential decision-making problem in which an agent needs to decide on an action from several competing actions \cite{Sutton2018}.
 The word arm originates from a slot machine that has a pull lever, and the pull lever is called an arm.
 Pulling an arm of a slot machine gives a reward based on a certain probability distribution.
-Moreover, the specific formulation considered in this paper is stochastic multi-armed bandits, in which the arm rewards are generated from a single reward distribution.
+Moreover, the specific formulation considered in this paper is a stochastic multi-armed bandit, in which the arm rewards are generated from a single reward distribution.
 In the MAB problem, the agent needs to sequentially decide from many arms which arm to pull to maximize the cumulative reward.
 The strategy of how the agent chooses the arms is called a policy.
 
-Usually, the performance for a policy is measured with regret.
+Usually, the performance of a policy is measured with regret.
 The regret quantifies the cost of learning by measuring how much reward agent has missed from the cumulative reward.
 In this paper, the performance for policy $\pi$ is measured with normalized regret
 \begin{equation}\label{eq:reg}
@@ -260,9 +260,9 @@ These algorithms are
     \item Recency-Based Exploration (RBE) \cite{Oksanen2015,Oksanen2017}.
 \end{enumerate}
 An analysis for stationary and non-stationary reward distributions can be found in the references.
-Also, other algorithms and more extensive discussion on the multi-armed bandits can be found in \cite{Lattimore2019}.
+Also, other algorithms and more extensive discussion on the stochastic multi-armed bandits can be found in \cite{Lattimore2019}.
 
-In the $\epsilon$-greedy algorithm the probability of choosing a random arm is $0 < \epsilon \ll 1$ and this probability remains constant in time.
+In the $\epsilon$-greedy algorithm the probability of choosing a random arm is $0 < \epsilon \ll 1$ and this probability remains constant or decreases slowly in time.
 When not selecting an arm randomly, the algorithm chooses the arm which has the highest action-value.
 The UCB1 and KL-UCB are policies which are based on deriving an upper confidence bound for the expected rewards and the arm with highest bound is selected.
 Thompson sampling is Bayesian algorithm where the posterior probability distributions for the expected rewards are formed from the collected rewards.
@@ -302,9 +302,9 @@ The reformulation is possible because the reward function ($\ref{eq:obj_func}$) 
 
 Usually in the combinatorial MAB problem, the agent does not know the mapping from the arm rewards to the super arm rewards.
 However, here the reward function $\eqref{eq:reward_func}$ is known which enables us to use MAB algorithms from the classical MAB problem.
-Authors in \cite{Mukherjee2012} and \cite{Kuai2019} use similar approach for MIMO antenna selection in mobile communications to maximize the throughput.
-The approach in \cite{Mukherjee2012} use UCB-1 algorithm and the reward statistics are constant.
-While, authors in \cite{Kuai2019} use Thompson sampling and non-stationary and stationary rewards are considered.
+Authors in \cite{Mukherjee2012} and \cite{Kuai2019} use a similar approach for MIMO antenna selection in mobile communications to maximize throughput.
+The approach in \cite{Mukherjee2012} uses the UCB-1 algorithm and the reward statistics are constant.
+While, authors in \cite{Kuai2019} use Thompson sampling and both, non-stationary and stationary rewards are considered.
 
 In this paper we generalize the approaches in \cite{Mukherjee2012, Kuai2019} to any index-based algorithm and non-stationary reward distributions. 
 The proposed algorithm for solving the combinatorial MAB problem with known mapping from the arm rewards to the super arm rewards is shown in Algorithm~\ref{alg:gcmab}.
@@ -511,7 +511,7 @@ Thompson sampling does not adapt as well for the non-stationary case even if it 
 The $\epsilon$-greedy algorithm has lower regret than Thompson sampling but it still performs worse than the other algorithms. 
 The Fig.\ref{fig:non_stationary_ci} demonstrates that RBE algorithm has a very small regret with low variance.
 Also, the median performance is better than with any other of the used algorithms.
-Hence it is very promising algorithm for the radar problem at hand. 
+Hence it is promising algorithm for the radar problem at hand. 
 The other algorithms which performed well in stationary reward scenario have poorer performance in non-stationary reward case.
 The changes in reward distributions will force the agent to switch the arm if the action-value for the arm under exploitation becomes lower than the other action-values.
 Therefore, in case of non-stationary target, the $\epsilon$-greedy algorithm achieves a smaller variance on regret than with stationary targets.
