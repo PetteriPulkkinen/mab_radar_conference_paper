@@ -219,6 +219,7 @@ Different subsets must be explored sufficiently large number of times to reinfor
 The MAB problem is a sequential decision-making problem in which an agent needs to decide on an action from several competing actions \cite{Sutton2018}.
 The word arm originates from a slot machine that has a pull lever, and the pull lever is called an arm.
 Pulling an arm of a slot machine gives a reward based on a certain probability distribution.
+Moreover, the specific formulation considered in this paper is stochastic multi-armed bandits, in which each arm is associated with one state, thus with one reward distribution with constant or slowly changing parameters.
 In the MAB problem, the agent needs to sequentially decide from many arms which arm to pull to maximize the cumulative reward.
 The strategy of how the agent chooses the arms is called a policy.
 
@@ -282,8 +283,9 @@ Random algorithms, such as $\epsilon$-greedy, explore different arms with some p
 \label{sec:fmab}
 
 Classical multi-armed bandits have a finite set of arms and a single arm is selected at each time instant.
-Each subset of TX-RX pairs could be one arm associated with the reward given by the objective function.
-However, a number of the arms would be $\binom{N}{N_S}\binom{M}{M_S}$ which grows exponentially. This could make the problem unsolvable with the MAB approach because there is no time to explore all the arms in a given time horizon.
+Therefore, the TX-RX selection problem in distributed MIMO radars could be formulated as follows.
+An arm could be a subset of TX-RX pairs and the reward is calculated using the reward function \eqref{eq:reward_func}.
+However, number of the subsets is $\binom{N}{N_S}\binom{M}{M_S}$ which grows exponentially. This could make the problem unsolvable with the MAB approach because there is no time to explore all the arms in a given time horizon.
 The amount of time which is available for learning the different channels depends on the dynamic nature of targets and the propagation scenario.
 For example, if a target appears or disappears or does abrupt maneuvers, then rapid changes in the reward distributions will happen. 
 On the other hand, smooth changes take place when a target moves on a smooth trajectory and changes its orientation gradually.
@@ -302,7 +304,7 @@ The reward distributions were assumed stationary in \cite{Mukherjee2012}.
 
 In this paper we generalize the approach in \cite{Mukherjee2012} to any index-based algorithm and non-stationary reward distributions. 
 The proposed algorithm for solving the combinatorial MAB problem with known mapping from the arm rewards to the super arm rewards is shown in Algorithm~\ref{alg:gcmab}.
-The algorithm allows for using any optimization method to find the super arm, and any index-based MAB algorithm to find the indexes.
+On line~\ref{alg:calc_idx} of the Algorithm~\ref{alg:gcmab} any index-based MAB algorithm can be used to find the indexes, and on line~\ref{alg:find_sa} any optimization method can be used to find the super arm.
 The indexes calculated by a MAB algorithm will ensure that the exploration and exploitation trade-off is balanced well.
 
 The principles of the Algorithm~\ref{alg:gcmab} can be also used for the random policies by using the SINR estimates $\vsinrb$ instead of the indexes.
@@ -312,8 +314,8 @@ However, the exploration is not as efficient as with index-based policies, becau
 \begin{algorithm}[h]
 \SetAlgoLined
 \While{not end of the time horizon}{
-calculate indexes for all arms\;
-find the super arm using the indexes\;
+calculate indexes for all arms\; \label{alg:calc_idx}
+find the super arm using the indexes\; \label{alg:find_sa}
 pull the super arm\;
 \If {non-stationary rewards}{
 discount rewards for all arms\;
