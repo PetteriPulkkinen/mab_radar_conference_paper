@@ -127,23 +127,26 @@ A Distributed multiple-input and multiple-output (MIMO) radar is a system in whi
 The widely distributed antennas increase spatial diversity which can be utilized for improved target localization, parameter estimation and detecting low-observable targets.
 In a MIMO radar, the used waveforms are designed jointly and the waveforms are typically orthogonal.
 Therefore, each transmitter-receiver (TX-RX) pair forms an independent channel for illuminating and observing the targets.
-Increasing the number of channels provides additional spatial diversity at the cost of larger amount of data to be processed and higher power consumption \cite{Godrich2011, Sun2014, Aittomaeki2018}.
+Increasing the number of channels provides additional spatial diversity at the cost of a larger amount of data to be processed and higher power consumption \cite{Godrich2011, Sun2014, Aittomaeki2011}.
 In addition, active transmitters may expose their location which might be undesired in certain applications.
-Strategies for TX-RX subset selection are studied to preserve the spatial diversity and reduce the costs at the same time.
+Strategies for TX-RX subset selection are studied to preserve spatial diversity and reduce the costs at the same time.
 
 The TX-RX subset selection problem, especially for target localization, has been previously addressed in the literature \cite{Godrich2011, Sun2014}.
 In these studies, the signal-to-interference-plus-noise ratio (SINR) is assumed to be known or estimated.
 It is possible to estimate the SINR based on assumed particular propagation environments and target models, but a real-world radar environment may deviate from the assumed model and consequently lead to performance degradation.
-
 Another way to form the estimates is to probe the different channels for a sufficient number of times to learn their state. 
 The probing needs to be efficient since the channels are continuously evolving and the probing will impact the radar performance because it requires performing extra tasks in addition to the main operation of the radar.  Therefore, it is necessary to decide when to exploit the TX-RX subset currently providing the best payoff or explore other subsets that may or may not provide even higher SINR levels. 
 This is the exploration-exploitation trade-off.
 
-This paper proposes a machine learning approach for the active TX-RX subset selection in the distributed MIMO radar context.
-The problem is formulated as a multi-armed bandit (MAB) problem. 
-The MAB framework provides policies for selecting actions to balance the exploration and exploitation trade-off while maximizing the employed reward function \cite{Lattimore2019}.
-We use extensions from the combinatorial MAB framework to handle the exponentially growing action space and propose a generalized algorithm to solve the problem using any index-based MAB algorithm.
+A multi-armed bandit (MAB) framework, provides policies for selecting actions to balance the exploration and exploitation trade-off while maximizing the employed reward function \cite{Lattimore2019}.
+In the literature, such a framework is effectively used for example in opportunistic spectrum access, in which the secondary user must choose frequency band in a way that interference to the primary user is not caused \cite{Zhao2008}.
+Also, authors in \cite{Mukherjee2012} and \cite{Kuai2019} propose using a combinatorial MAB approach as a robust way for selecting the MIMO antenna subset for maximizing throughput in communication systems.
+Extensions from combinatorial multi-armed bandits are used to address the problem with large combinatorial action space.
 
+This paper proposes a machine learning approach for the active TX-RX subset selection in the distributed MIMO radar context.
+It is based on the same principle as in the papers \cite{Mukherjee2012} and \cite{Kuai2019}. 
+However, the approach is generalized for any-index based policies and non-stationary environments. 
+The generalized approach is simulated in a radar environment and the performance of several different MAB algorithms is compared.
 
 
 %  -------------------------------------------------------------------------------
@@ -184,7 +187,7 @@ where the noise power and the interference power is subtracted from the received
 Note that the SINR is time dependent because random variable $\esp$ is non-stationary. 
 
 
-Performance in target detection and target localization depend on the SINR level \cite{aittomaki1, aittomaki2, antenna_subset_selection, selection_and_placement}.
+Performance in target detection and target localization depend on the SINR level \cite{aittomaeki2011, Aittomaeki2018, Godrich2011, Sun2014}.
 Therefore, a reward function for reinforcement learning is proposed that depends on the vector $\vsinrexp$ that consists of all the SINR values $\esinrexp$.
 The following reward function is used for the employed MAB learning
 \begin{equation}\label{eq:reward_func}
@@ -216,9 +219,10 @@ Different subsets must be explored sufficiently large number of times to reinfor
 \section{Multi-armed bandits}
 \label{sec:mab}
 
-The MAB problem is a sequential decision-making problem in which an agent needs to decide on an action from several competing actions \cite{rl_intro}.
+The MAB problem is a sequential decision-making problem in which an agent needs to decide on an action from several competing actions \cite{Sutton2018}.
 The word arm originates from a slot machine that has a pull lever, and the pull lever is called an arm.
 Pulling an arm of a slot machine gives a reward based on a certain probability distribution.
+Moreover, the specific formulation considered in this paper is stochastic multi-armed bandits, in which each arm is associated with one state, thus with one reward distribution with constant or slowly changing parameters.
 In the MAB problem, the agent needs to sequentially decide from many arms which arm to pull to maximize the cumulative reward.
 The strategy of how the agent chooses the arms is called a policy.
 
@@ -240,23 +244,23 @@ The update equation for each arm can be written as
 \begin{equation}\label{eq:update1}
     q_{t+1}(a) = q_{t}(a) + \alpha \left(r_t + q_{t}(a)\right),
 \end{equation}
-where $r_t$ is the received reward from selecting the arm $a$, $\alpha$ is a step size and $q_{t}(a)$ is called action-value \cite{rl_intro}.
+where $r_t$ is the received reward from selecting the arm $a$, $\alpha$ is a step size and $q_{t}(a)$ is called action-value \cite{Sutton2018}.
 For stationary rewards, $\alpha$ can be set to $t^{-1}$, so that (\ref{eq:update1}) calculates the empirical mean. 
-For non-stationary rewards, the parameter $\alpha$ needs to be constant so that old rewards have a lower weight than more recent ones \cite{rl_intro}.
+For non-stationary rewards, the parameter $\alpha$ needs to be constant so that old rewards have a lower weight than more recent ones \cite{Sutton2018}.
 
 In practice, a policy is realized as an algorithm.
 We briefly review five different MAB algorithms which are used in the simulations.
 The selected algorithms are widely used to solve MAB problems.
 These algorithms are
 \begin{enumerate}
-    \item $\epsilon$-greedy \cite{rl_intro},
-    \item Upper Confidence Bound (UCB1) \cite{rl_intro, DSWUCB},
-    \item Kullback Leibler Upper Confidence Bound (KL-UCB) \cite{KL_UCB},
-    \item Thompson sampling \cite{Thompson, DThompson} and
-    \item Recency-Based Exploration (RBE) \cite{RBE,DRBE}.
+    \item $\epsilon$-greedy \cite{Sutton2018},
+    \item Upper Confidence Bound (UCB1) \cite{Sutton2018, Garivier2008},
+    \item Kullback Leibler Upper Confidence Bound (KL-UCB) \cite{Garivier2011},
+    \item Thompson sampling \cite{Agrawal2011, Raj2017} and
+    \item Recency-Based Exploration (RBE) \cite{Oksanen2015,Oksanen2017}.
 \end{enumerate}
 An analysis for stationary and non-stationary reward distributions can be found in the references.
-Also, other algorithms and more extensive discussion on the multi-armed bandits can be found in \cite{lattimorebandit, rl_intro, mab_survey, intro_to_mab}.
+Also, other algorithms and more extensive discussion on the multi-armed bandits can be found in \cite{Lattimore2019, Sutton2018, Burtini2015, Slivkins2019}.
 
 In the $\epsilon$-greedy algorithm the probability of choosing a random arm is $0 < \epsilon \ll 1$ and this probability remains constant in time.
 When not selecting an arm randomly, the algorithm chooses the arm which has the highest action-value.
@@ -272,7 +276,7 @@ Typically, the index is constructed in a way that the arm with highest index is 
 
 Another way to solve a MAB problem is to divide the exploration and the exploitation into two distinct phases.
 This division can be fully deterministic or random. 
-Deterministic algorithms divide the exploration and the exploitation phases into blocks of specific lengths \cite{lattimorebandit}.
+Deterministic algorithms divide the exploration and the exploitation phases into blocks of specific lengths \cite{Lattimore2019}.
 Random algorithms, such as $\epsilon$-greedy, explore different arms with some probability and otherwise they exploit the arm with currently highest action-value. 
 
 %  -------------------------------------------------------------------------------
@@ -282,8 +286,9 @@ Random algorithms, such as $\epsilon$-greedy, explore different arms with some p
 \label{sec:fmab}
 
 Classical multi-armed bandits have a finite set of arms and a single arm is selected at each time instant.
-Each subset of TX-RX pairs could be one arm associated with the reward given by the objective function.
-However, a number of the arms would be $\binom{N}{N_S}\binom{M}{M_S}$ which grows exponentially. This could make the problem unsolvable with the MAB approach because there is no time to explore all the arms in a given time horizon.
+Therefore, the TX-RX selection problem in distributed MIMO radars could be formulated as follows.
+An arm could be a subset of TX-RX pairs and the reward is calculated using the reward function \eqref{eq:reward_func}.
+However, number of the subsets is $\binom{N}{N_S}\binom{M}{M_S}$ which grows exponentially. This could make the problem unsolvable with the MAB approach because there is no time to explore all the arms in a given time horizon.
 The amount of time which is available for learning the different channels depends on the dynamic nature of targets and the propagation scenario.
 For example, if a target appears or disappears or does abrupt maneuvers, then rapid changes in the reward distributions will happen. 
 On the other hand, smooth changes take place when a target moves on a smooth trajectory and changes its orientation gradually.
@@ -292,17 +297,18 @@ The problem with exponentially increasing number of arms can be avoided by refor
 The arms are chosen to maximize the reward function and satisfy the constraints.
 When this formulation is used, the action-values introduced in section~\ref{sec:mab} are the channel SINR estimates $\vsinrb$.
 The total number of arms is reduced to $NM$ and the agent can choose $N_S M_S$ arms at each iteration.
-The formulation is known as the combinatorial multi-armed bandits, in which the subset of arms is called a super arm \cite{comb_mab}.
+The formulation is known as the combinatorial multi-armed bandits, in which the subset of arms is called a super arm \cite{Chen2014}.
 The reformulation is possible because the reward function ($\ref{eq:obj_func}$) is an increasing function of the radar channel SINR values and each arm is independent since waveforms from different transmitters do not interfere with each other if orthogonal waveforms are used.
 
 Usually in the combinatorial MAB problem, the agent does not know the mapping from the arm rewards to the super arm rewards.
 However, here the reward function $\eqref{eq:reward_func}$ is known which enables us to use MAB algorithms from the classical MAB problem.
-Similar approach is used for MIMO antenna subset selection in mobile communications, where each arm represents power-normalized throughput for each antenna and UCB1-algorithm paired with an exhaustive search were used to solve the subset selection problem \cite{MAB_subset_selection}.
-The reward distributions were assumed stationary in \cite{MAB_subset_selection}.  
+Authors in \cite{Mukherjee2012} and \cite{Kuai2019} use similar approach for MIMO antenna selection in mobile communications to maximize the throughput.
+The approach in \cite{Mukherjee2012} use UCB-1 algorithm and the reward statistics are constant.
+While, authors in \cite{Kuai2019} use Thompson sampling and non-stationary and stationary rewards are considered.
 
-In this paper we generalize the approach in \cite{MAB_subset_selection} to any index-based algorithm and non-stationary reward distributions. 
+In this paper we generalize the approaches in \cite{Mukherjee2012, Kuai2019} to any index-based algorithm and non-stationary reward distributions. 
 The proposed algorithm for solving the combinatorial MAB problem with known mapping from the arm rewards to the super arm rewards is shown in Algorithm~\ref{alg:gcmab}.
-The algorithm allows for using any optimization method to find the super arm, and any index-based MAB algorithm to find the indexes.
+On line~\ref{alg:calc_idx} of the Algorithm~\ref{alg:gcmab} any index-based MAB algorithm can be used to find the indexes, and on line~\ref{alg:find_sa} any optimization method can be used to find the super arm.
 The indexes calculated by a MAB algorithm will ensure that the exploration and exploitation trade-off is balanced well.
 
 The principles of the Algorithm~\ref{alg:gcmab} can be also used for the random policies by using the SINR estimates $\vsinrb$ instead of the indexes.
@@ -312,8 +318,8 @@ However, the exploration is not as efficient as with index-based policies, becau
 \begin{algorithm}[h]
 \SetAlgoLined
 \While{not end of the time horizon}{
-calculate indexes for all arms\;
-find the super arm using the indexes\;
+calculate indexes for all arms\; \label{alg:calc_idx}
+find the super arm using the indexes\; \label{alg:find_sa}
 pull the super arm\;
 \If {non-stationary rewards}{
 discount rewards for all arms\;
@@ -477,7 +483,7 @@ The other algorithms do not have any tunable parameters.
 The time horizon is set to 1000 which is sufficiently long for finding the optimal TX-RX configuration.
 
 The stationary target implies that the expected rewards of the arms do not change in time.
-Therefore, it is possible to achieve a logarithmic regret \cite{lattimorebandit}.
+Therefore, it is possible to achieve a logarithmic regret \cite{Lattimore2019}.
 From Fig.\ref{fig:stationary_regret} it can be observed that all algorithms other than $\epsilon$-greedy can achieve the sublinear regret.
 Algorithms like Thompson sampling and KL-UCB which require knowledge about the reward distribution have excellent performance in these simulations.
 The $\epsilon$-greedy algorithm has the highest regret and it is visible from Fig.\ref{fig:stationary_ci} that such random policies have a high variance.
