@@ -127,23 +127,26 @@ A Distributed multiple-input and multiple-output (MIMO) radar is a system in whi
 The widely distributed antennas increase spatial diversity which can be utilized for improved target localization, parameter estimation and detecting low-observable targets.
 In a MIMO radar, the used waveforms are designed jointly and the waveforms are typically orthogonal.
 Therefore, each transmitter-receiver (TX-RX) pair forms an independent channel for illuminating and observing the targets.
-Increasing the number of channels provides additional spatial diversity at the cost of larger amount of data to be processed and higher power consumption \cite{Godrich2011, Sun2014, Aittomaeki2011}.
+Increasing the number of channels provides additional spatial diversity at the cost of a larger amount of data to be processed and higher power consumption \cite{Godrich2011, Sun2014, Aittomaeki2011}.
 In addition, active transmitters may expose their location which might be undesired in certain applications.
-Strategies for TX-RX subset selection are studied to preserve the spatial diversity and reduce the costs at the same time.
+Strategies for TX-RX subset selection are studied to preserve spatial diversity and reduce the costs at the same time.
 
 The TX-RX subset selection problem, especially for target localization, has been previously addressed in the literature \cite{Godrich2011, Sun2014}.
 In these studies, the signal-to-interference-plus-noise ratio (SINR) is assumed to be known or estimated.
 It is possible to estimate the SINR based on assumed particular propagation environments and target models, but a real-world radar environment may deviate from the assumed model and consequently lead to performance degradation.
-
 Another way to form the estimates is to probe the different channels for a sufficient number of times to learn their state. 
 The probing needs to be efficient since the channels are continuously evolving and the probing will impact the radar performance because it requires performing extra tasks in addition to the main operation of the radar.  Therefore, it is necessary to decide when to exploit the TX-RX subset currently providing the best payoff or explore other subsets that may or may not provide even higher SINR levels. 
 This is the exploration-exploitation trade-off.
 
-This paper proposes a machine learning approach for the active TX-RX subset selection in the distributed MIMO radar context.
-The problem is formulated as a multi-armed bandit (MAB) problem. 
-The MAB framework provides policies for selecting actions to balance the exploration and exploitation trade-off while maximizing the employed reward function \cite{Lattimore2019}.
-We use extensions from the combinatorial MAB framework to handle the exponentially growing action space and propose a generalized algorithm to solve the problem using any index-based MAB algorithm.
+A well-known framework, called multi-armed bandits (MAB) framework, provides policies for selecting actions to balance the exploration and exploitation trade-off while maximizing the employed reward function \cite{Lattimore2019}
+In the literature, such a framework is effectively used, for example, for opportunistic spectrum access, where the secondary user must select the frequency band without interfering with the primary user \cite{Zhao2008}.
+In addition, authors in \cite{Mukherjee2012} and \cite{Kuai2019} propose using a combinatorial MAB approach as a robust way for selecting the MIMO antenna subset for maximizing throughput in communication systems.
+Extensions from combinatorial multi-armed bandits are used to address the problem with exponentially growing action space in the function of antennas.
 
+This paper proposes a machine learning approach for the active TX-RX subset selection in the distributed MIMO radar context.
+It is based on the same principle as in the papers \cite{Mukherjee2012} and \cite{Kuai2019}. 
+However, the approach is generalized for any-index based policies and non-stationary environments. 
+The generalized approach is simulated in a radar environment and the performance of several different MAB algorithms is compared.
 
 
 %  -------------------------------------------------------------------------------
