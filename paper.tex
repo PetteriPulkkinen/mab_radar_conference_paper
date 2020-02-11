@@ -139,7 +139,7 @@ The probing needs to be efficient since the channels are continuously evolving a
 This is the exploration-exploitation trade-off.
 
 A multi-armed bandit (MAB) framework provides policies for selecting actions to balance the exploration and exploitation trade-off while maximizing the employed reward function \cite{Lattimore2019}.
-In the literature, such a framework is effectively used for example in opportunistic spectrum access, in which the secondary user must choose frequency band in a way that it does not cause interference to the primary user \cite{Zhao2008}.
+In the literature, such a framework is effectively used for example for opportunistic spectrum access, in which the secondary user must choose frequency band in a way that does not cause interference to the primary user \cite{Zhao2008}.
 Moreover, authors in \cite{Mukherjee2012} and \cite{Kuai2019} use a combinatorial MAB approach as a robust way for selecting the MIMO antenna subset for maximizing throughput in communication systems.
 Extensions from combinatorial multi-armed bandits are used to address the problem with large combinatorial action space.
 
@@ -386,7 +386,7 @@ To simplify the simulations,
 the target scattering coefficient remains constant through a single measurement period and the stochasticity of the noise and the interference powers in the measurements are approximated to be negligible. 
 Therefore, the rewards for each arm are simulated by
 \begin{equation}
-    \esinr  = \esinrexp c \sim \text{Exp}\left(\frac{1}{\esinrexp}\right),
+    \esinr  \sim \text{Exp}\left(\esinrexp\right),
 \end{equation}
 which is the exponential distribution with mean of $\esinrexp$.
 The channel SINR $\esinrexp$ on a linear scale for receiver $n$ and transmitter $m$ is calculated from the models defined in sections \ref{seq:sys_conf} \ref{seq:sc_model} and \ref{seq:env_model} as follows
